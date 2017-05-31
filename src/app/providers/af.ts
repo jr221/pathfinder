@@ -6,9 +6,6 @@ import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable 
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-
-export const enum AuthState {  LoggedIn, LoggedOut   }
-
 @Injectable()
 export class AF {
   user: Observable<firebase.User>;

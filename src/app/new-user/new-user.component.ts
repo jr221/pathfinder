@@ -9,15 +9,15 @@ import { AF } from '../providers/af';
 })
 export class NewUserComponent implements OnInit {
   public passError = false;
-  constructor(public authService: AF, private router: Router) { }
+  constructor(public fireService: AF, private router: Router) { }
 
   ngOnInit() {
   }
   cancel(){
     this.router.navigate(['login']);
   }
-  confirm(email: HTMLInputElement, password: HTMLInputElement){
-    this.authService.signup(email.value, password.value).then((data) => {
+  confirm(firstName: HTMLInputElement, email: HTMLInputElement, password: HTMLInputElement){
+    this.fireService.signup(email.value, password.value).then((data) => {
       this.router.navigate(['user']);
       console.log('Nice, it worked!');
     })
