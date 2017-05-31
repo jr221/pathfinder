@@ -1,3 +1,28 @@
-.margin {
-  margin: 2em;
+.imageAlign {
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 1em;
+}
+.padRight{
+  padding-right: 2em;
+}
+.image1{
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  max-width:700px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+.image2{
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  max-width:600px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }

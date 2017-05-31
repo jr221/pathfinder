@@ -9,7 +9,12 @@ import { AF } from '../providers/af';
 })
 export class UserPageComponent implements OnInit {
   public loginError = false;
-  constructor(public authService: AF, private router: Router) { }
+
+  constructor(public authService: AF, private router: Router) {
+    if(!authService.status){
+      this.router.navigate(['login']);
+    }
+  }
 
   ngOnInit() {
   }
@@ -19,6 +24,12 @@ export class UserPageComponent implements OnInit {
       this.router.navigate(['login']);
       console.log('Nice, it worked!');
     })
+  }
+  joinAdventure(){
+    this.router.navigate(['joinAdventure']);
+  }
+  createAdventure(){
+
   }
 
 }

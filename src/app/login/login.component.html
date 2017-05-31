@@ -6,11 +6,17 @@
   </div>
   <div class ="field flexbox margin">
     <label for="password"> Password:</label>
-    <input type="password" name="password" #newPassword>
+    <input type="password" name="password" #newPassword
+      onkeydown = "if (event.keyCode == 13)
+                        document.getElementById('login').click()" >
   </div>
   <div class="flexbutton">
-    <button (click)="newUser()" class="btn btn-secondary margin"> Create new user</button>
-    <button (click)="login(newUsername, newPassword)" class="btn btn-primary margin"> Login</button>
+    <form>
+      <button (click)="newUser()" class="btn btn-secondary margin"> Create new user</button>
+    </form>
+    <form>
+      <button id="login" (click)="login(newUsername, newPassword)" class="btn btn-primary margin"> Login</button>
+    </form>
   </div>
 </form>
 <div class="alertWidth">

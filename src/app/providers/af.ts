@@ -7,16 +7,24 @@ import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 
-export const enum AuthState {      LoggedIn,      LoggedOut   }
+export const enum AuthState {  LoggedIn, LoggedOut   }
 
 @Injectable()
 export class AF {
   user: Observable<firebase.User>;
   items: FirebaseListObservable<any[]>;
-
+  public status;
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
     this.user = afAuth.authState;
+    this.user.subscribe(user => {
+      if(user){
+        this.status = true;
+      }
+      else {
+        this.status = false;
+      }
+    });
     this.items = db.list('items');
   }
 
