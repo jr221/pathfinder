@@ -1,0 +1,29 @@
+<form class="paddingleft">
+  <h1 class="text-center">Create User Page</h1>
+  <div class ="field flexbox margin">
+    <label for="First Name"> First Name: </label>
+    <input name="firstName" #newFirstName>
+  </div>
+  <div class ="field flexbox margin">
+    <label for="Last Name"> Last Name: </label>
+    <input name="lastName" #newLastName>
+  </div>
+  <div class ="field flexbox margin">
+    <label for="email"> Email: </label>
+    <input name="email" #newEmail>
+  </div>
+  <div class ="field flexbox margin">
+    <label for="password"> Password:</label>
+    <input type="password" name="password" #newPassword>
+  </div>
+  <div class="flexbutton">
+    <button (click)="cancel()" class="btn btn-secondary margin"> Cancel</button>
+    <button (click)="confirm(newEmail, newPassword)" class="btn btn-primary margin"> Confirm</button>
+  </div>
+  <div class="alertWidth">
+    <div *ngIf="passError" class="alert alert-danger" role="alert">
+      <span class="pficon pficon-error-circle-o"></span>
+      <strong>Invalid!</strong> Please provide a vaid email and password!
+    </div>
+  </div>
+</form>

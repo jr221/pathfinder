@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Input } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
+import { AF } from './providers/af';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  user: Observable<firebase.User>;
+  constructor(public authService: AF, private router: Router) {
+    //authService.user.subscribe(
+     //newAuthState =>           this.loggedIn = (newAuthState === AuthState.LoggedIn));
+  }
+
 }

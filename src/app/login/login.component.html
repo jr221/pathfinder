@@ -1,0 +1,21 @@
+<h1 class="text-center">Login Page</h1>
+<form class="paddingleft">
+  <div class ="field flexbox margin">
+    <label for="username"> Username: </label>
+    <input name="username" #newUsername>
+  </div>
+  <div class ="field flexbox margin">
+    <label for="password"> Password:</label>
+    <input type="password" name="password" #newPassword>
+  </div>
+  <div class="flexbutton">
+    <button (click)="newUser()" class="btn btn-secondary margin"> Create new user</button>
+    <button (click)="login(newUsername, newPassword)" class="btn btn-primary margin"> Login</button>
+  </div>
+</form>
+<div class="alertWidth">
+  <div *ngIf="loginError" class="alert alert-danger alert-dismissable" role="alert">
+    <span class="pficon pficon-error-circle-o"></span>
+    <strong>Invalid!</strong> Please provide a vaid email and password!
+  </div>
+</div>

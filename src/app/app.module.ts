@@ -4,17 +4,50 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { NewUserComponent } from './new-user/new-user.component';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AF } from "./providers/af";
+import { UserPageComponent } from './user-page/user-page.component';
+
+const routes: Routes = [
+  { path: 'new-user', component: NewUserComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'user', component: UserPageComponent },
+  { path: '',   redirectTo: '/login', pathMatch: 'full' }
+]
+
+// Must export the config
+export const firebaseConfig = {
+  apiKey: 'AIzaSyCb3G_I0MbAjQkJDjcgKER6RHGjOGZ0UeQ',
+  authDomain: 'pathfinder-9db2c.firebaseapp.com',
+  databaseURL: 'https://pathfinder-9db2c.firebaseio.com',
+  storageBucket: 'pathfinder-9db2c.appspot.com',
+  messagingSenderId: '405592642384'
+};
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    NewUserComponent,
+    UserPageComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AF],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
