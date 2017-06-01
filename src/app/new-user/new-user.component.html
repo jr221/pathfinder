@@ -5,8 +5,8 @@
     <input name="firstName" #newFirstName>
   </div>
   <div class ="field flexbox margin">
-    <label for="Last Name"> Last Name: </label>
-    <input name="lastName" #newLastName>
+    <label for="UserId"> User ID: </label>
+    <input name="UserId" #newUserId>
   </div>
   <div class ="field flexbox margin">
     <label for="email"> Email: </label>
@@ -18,7 +18,7 @@
   </div>
   <div class="flexbutton">
     <button (click)="cancel()" class="btn btn-secondary margin"> Cancel</button>
-    <button (click)="confirm(newFirstName, newEmail, newPassword)" class="btn btn-primary margin"> Confirm</button>
+    <button (click)="confirm(newFirstName, newUserId, newEmail, newPassword)" class="btn btn-primary margin"> Confirm</button>
   </div>
   <div class="alertWidth">
     <div *ngIf="passError" class="alert alert-danger" role="alert">

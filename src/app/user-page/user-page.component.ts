@@ -11,20 +11,16 @@ export class UserPageComponent implements OnInit {
   public loginError = false;
 
   constructor(public authService: AF, private router: Router) {
-    if(!authService.status){
-      this.router.navigate(['login']);
+    console.log('checking status',status);
+    if(!status){
+      console.log(status);
+      //this.router.navigate(['login']);
     }
   }
 
   ngOnInit() {
   }
 
-  signOut(){
-    this.authService.logout().then((data) => {
-      this.router.navigate(['login']);
-      console.log('Nice, it worked!');
-    })
-  }
   joinAdventure(){
     this.router.navigate(['joinAdventure']);
   }

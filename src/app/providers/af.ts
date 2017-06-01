@@ -1,6 +1,7 @@
 // src/app/providers/af.ts
 import {Injectable} from "@angular/core";
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
@@ -9,20 +10,12 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class AF {
   user: Observable<firebase.User>;
-  items: FirebaseListObservable<any[]>;
-  public status;
+  users: FirebaseListObservable<any[]>;
+  //public status = false;
 
-  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
+  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, private router: Router) {
     this.user = afAuth.authState;
-    this.user.subscribe(user => {
-      if(user){
-        this.status = true;
-      }
-      else {
-        this.status = false;
-      }
-    });
-    this.items = db.list('items');
+    this.users = db.list('user');
   }
 
   signup(email: string, password: string) {

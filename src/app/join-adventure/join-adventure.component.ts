@@ -10,7 +10,7 @@ import { AF } from '../providers/af';
 export class JoinAdventureComponent implements OnInit {
 
   constructor(public authService: AF, private router: Router) {
-    if(!authService.status){
+    if(!status){
       this.router.navigate(['login']);
     }
   }
