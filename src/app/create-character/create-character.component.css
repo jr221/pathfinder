@@ -1,0 +1,23 @@
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  width: 20em;
+}
+.flexbutton{
+  display: flex;
+  justify-content: flex-end;
+  width: 22em;
+}
+.alertWidth{
+  width: 40em;
+  padding-left: 2em;
+}
+.paddingleft1{
+  padding-left: 25em;
+}
+.paddingleft2{
+  padding-left: 10em;
+}
+.margin {
+  margin: 1em;
+}

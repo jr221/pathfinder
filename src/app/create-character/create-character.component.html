@@ -1,0 +1,74 @@
+<h1 class="text-center">Create New Character Page</h1>
+<form class="container" style="width:100%">
+    <div id="left" class="paddingleft1" style="float:left; width:50%;">
+      <div class ="field flexbox margin">
+        <label for="Character Name"> Character Name: </label>
+        <input name="characterName" #newCharacterName>
+      </div>
+      <div class ="field flexbox margin">
+        <label for="Class"> Class: </label>
+        <!---create a drop down to select from-->
+        <input name="class" #newClass>
+      </div>
+      <div class ="field flexbox margin">
+        <label for="Background"> Background: </label>
+        <!---create a drop down to select from-->
+        <input name="background" #newBackground>
+      </div>
+      <div class ="field flexbox margin">
+        <label for="Faction"> Faction:</label>
+        <input name="faction" #newFaction>
+      </div>
+      <div class ="field flexbox margin">
+        <label for="Race"> Race: </label>
+        <input name="race" #newRace>
+      </div>
+      <div class ="field flexbox margin">
+        <label  for="Alignment"> Alignment: </label>
+        <!---create a drop down to select from-->
+        <input name="alignment" #newAlignment>
+      </div>
+  </div>
+  <div id="right" class="paddingleft2" style="float:right; width:50%;">
+    <div class ="field flexbox margin">
+      <label for="Strength"> Strength: </label>
+      <input name="characterStrength" #newCharacterStrength>
+    </div>
+    <div class ="field flexbox margin">
+      <label for="Dexterity"> Dexterity: </label>
+      <!---create a drop down to select from-->
+      <input name="characterDexterity" #newCharacterDexterity>
+    </div>
+    <div class ="field flexbox margin">
+      <label for="Constitution"> Constitution: </label>
+      <!---create a drop down to select from-->
+      <input name="characterConstitution" #newCharacterConstitution>
+    </div>
+    <div class ="field flexbox margin">
+      <label for="Intelligence"> Intelligence:</label>
+      <input name="characterIntelligence" #newCharacterIntelligence>
+    </div>
+    <div class ="field flexbox margin">
+      <label for="Wisdom"> Wisdom: </label>
+      <input name="characterWisdom" #newCharacterWisdom>
+    </div>
+    <div class ="field flexbox margin">
+      <label  for="Charisma"> Charisma: </label>
+      <!---create a drop down to select from-->
+      <input name="characterCharisma" #newCharacterCharisma>
+    </div>
+  </div>
+</form>
+
+<div class="text-center">
+  <div>
+    <button (click)="cancel()" class="btn btn-secondary margin"> Cancel</button>
+    <button (click)="confirm(newFirstName, newUsername, newEmail, newPassword)" class="btn btn-primary margin"> Confirm</button>
+  </div>
+  <div class="alertWidth">
+    <div *ngIf="passError" class="alert alert-danger" role="alert">
+      <span class="pficon pficon-error-circle-o"></span>
+      <strong>Invalid!</strong> Please provide a vaid email and password!
+    </div>
+  </div>
+</div>

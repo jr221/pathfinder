@@ -11,7 +11,6 @@ export class UserPageComponent implements OnInit {
   public loginError = false;
 
   constructor(public authService: AF, private router: Router) {
-    console.log('checking status',status);
     if(!status){
       console.log(status);
       //this.router.navigate(['login']);
@@ -22,7 +21,7 @@ export class UserPageComponent implements OnInit {
   }
 
   joinAdventure(){
-    this.router.navigate(['joinAdventure']);
+    this.router.navigate(['adventureOptions']);
   }
   createAdventure(){
 

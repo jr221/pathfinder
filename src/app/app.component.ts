@@ -14,27 +14,38 @@ export class AppComponent {
   public status:boolean = false;
   public display;
   public users;
+  public uid;
+
   constructor(public fireService: AF, private router: Router) {
-    fireService.user.subscribe(auth => {
+    this.checkStatus();
+  }
+
+  checkStatus(){
+    return this.fireService.user.subscribe(auth => {
       if(!auth){
         console.log('IS LOGGED OUT!');
         this.status = false;
         this.router.navigate(['login']);
         return;
       }
-
-        this.status=true;
-        this.fireService.db.list('user').subscribe(val =>{
-          console.log('the uid value is : ', val);
-          this.display = val.find(i => i.$key == auth.uid);
+        this.status = true;
+        this.uid = auth.uid;
+      if(this.status){
+          this.getDisplay();
         }
-
-      );
-
       this.router.navigate(['user']);
       console.log('IS LOGGED IN!', this.status);
 
     });
+  }
+  getDisplay(){
+    console.log('getting display');
+    return this.fireService.getFromDatabase('user', this.uid, 'uid').subscribe(val =>{
+      console.log('the uid value is : ', val);
+      this.display = val[0].username;
+      console.log(this.display);
+      }
+    );
   }
 
   signOut(){

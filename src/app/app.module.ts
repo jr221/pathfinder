@@ -15,12 +15,16 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AF } from "./providers/af";
 import { UserPageComponent } from './user-page/user-page.component';
 import { JoinAdventureComponent } from './join-adventure/join-adventure.component';
+import { CreateCharacterComponent } from './create-character/create-character.component';
+import { OptionsPageComponent } from './options-page/options-page.component';
 
 const routes: Routes = [
   { path: 'new-user', component: NewUserComponent },
   { path: 'login', component: LoginComponent },
   { path: 'user', component: UserPageComponent },
   { path: 'joinAdventure', component: JoinAdventureComponent },
+  { path: 'adventureOptions', component: OptionsPageComponent },
+  { path: 'newCharacter', component: CreateCharacterComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' }
 ]
 
@@ -39,7 +43,9 @@ export const firebaseConfig = {
     LoginComponent,
     NewUserComponent,
     UserPageComponent,
-    JoinAdventureComponent
+    JoinAdventureComponent,
+    CreateCharacterComponent,
+    OptionsPageComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

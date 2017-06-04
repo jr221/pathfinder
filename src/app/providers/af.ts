@@ -18,17 +18,26 @@ export class AF {
     this.users = db.list('user');
   }
 
-  signup(email: string, password: string) {
+    signup(email: string, password: string) {
       return this.afAuth
         .auth
         .createUserWithEmailAndPassword(email, password);
     }
-    //.then(value => {
-    //  console.log('Success!', value);
-    //})
-    //.catch(err => {
-    //  console.log('Something went wrong:',err.message);
-    //})
+
+
+    getFromDatabase(path: string, q: string, orderBy: string){
+      return this.db.list(path, {
+        query: {
+          orderByChild: orderBy,
+          equalTo: q
+        }
+      });
+    }
+
+    pushToDatabase(path: string, info){
+      this.db.list(path).push(info);
+    }
+
     login(email: string, password: string) {
       return this.afAuth.auth.signInWithEmailAndPassword(email, password);
     }

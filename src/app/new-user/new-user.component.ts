@@ -16,15 +16,16 @@ export class NewUserComponent implements OnInit {
   cancel(){
     this.router.navigate(['login']);
   }
-  confirm(firstName: HTMLInputElement, userId: HTMLInputElement, email: HTMLInputElement, password: HTMLInputElement){
+  confirm(firstName: HTMLInputElement, username: HTMLInputElement, email: HTMLInputElement, password: HTMLInputElement){
     this.fireService.signup(email.value, password.value).then((data) => {
       this.router.navigate(['user']);
       console.log('Nice, it worked!');
       var userInfo = {
+        uid: data.uid,
         firstName: firstName.value,
-        userId: userId.value
+        username: username.value
       };
-      this.fireService.db.list("user").push(userInfo);
+      this.fireService.pushToDatabase("user", userInfo);
     })
     .catch(err => {
       console.log('Something went wrong:',err.message);

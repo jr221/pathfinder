@@ -11,7 +11,7 @@ export class JoinAdventureComponent implements OnInit {
 
   constructor(public authService: AF, private router: Router) {
     if(!status){
-      this.router.navigate(['login']);
+      //this.router.navigate(['login']);
     }
   }
 
