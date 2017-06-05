@@ -5,17 +5,24 @@ import { Router } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { Character } from '../create-character/character.model';
 import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AF {
   user: Observable<firebase.User>;
   users: FirebaseListObservable<any[]>;
-  //public status = false;
+  public uid;
+  public currentChar;
+  // fix the logon for each page public loginStatus;
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, private router: Router) {
     this.user = afAuth.authState;
     this.users = db.list('user');
+    this.user.subscribe((data) => {
+      console.log('resolved this.uid ', data.uid);
+      this.uid = data.uid
+    });
   }
 
     signup(email: string, password: string) {
@@ -36,6 +43,10 @@ export class AF {
 
     pushToDatabase(path: string, info){
       this.db.list(path).push(info);
+    }
+
+    setCurChar(curChar: Character){
+      this.currentChar = curChar;
     }
 
     login(email: string, password: string) {

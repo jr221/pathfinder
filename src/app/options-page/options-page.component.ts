@@ -9,7 +9,7 @@ import { AF } from '../providers/af';
 })
 export class OptionsPageComponent implements OnInit {
 
-  constructor(public authService: AF, private router: Router) { }
+  constructor(public fireService: AF, private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +19,7 @@ export class OptionsPageComponent implements OnInit {
   }
 
   resumeGame(){
-
+      this.router.navigate(['resumeAdventure']);
   }
 
 }

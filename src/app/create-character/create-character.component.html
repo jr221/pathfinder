@@ -2,29 +2,29 @@
 <form class="container" style="width:100%">
     <div id="left" class="paddingleft1" style="float:left; width:50%;">
       <div class ="field flexbox margin">
-        <label for="Character Name"> Character Name: </label>
+        <label for="characterName"> Character Name: </label>
         <input name="characterName" #newCharacterName>
       </div>
       <div class ="field flexbox margin">
-        <label for="Class"> Class: </label>
+        <label for="characterClass"> Class: </label>
         <!---create a drop down to select from-->
-        <input name="class" #newClass>
+        <input name="characterClass" #newCharacterClass>
       </div>
       <div class ="field flexbox margin">
-        <label for="Background"> Background: </label>
+        <label for="background"> Background: </label>
         <!---create a drop down to select from-->
         <input name="background" #newBackground>
       </div>
       <div class ="field flexbox margin">
-        <label for="Faction"> Faction:</label>
+        <label for="faction"> Faction:</label>
         <input name="faction" #newFaction>
       </div>
       <div class ="field flexbox margin">
-        <label for="Race"> Race: </label>
+        <label for="race"> Race: </label>
         <input name="race" #newRace>
       </div>
       <div class ="field flexbox margin">
-        <label  for="Alignment"> Alignment: </label>
+        <label  for="alignment"> Alignment: </label>
         <!---create a drop down to select from-->
         <input name="alignment" #newAlignment>
       </div>
@@ -35,25 +35,25 @@
       <input name="characterStrength" #newCharacterStrength>
     </div>
     <div class ="field flexbox margin">
-      <label for="Dexterity"> Dexterity: </label>
+      <label for="characterDexterity"> Dexterity: </label>
       <!---create a drop down to select from-->
       <input name="characterDexterity" #newCharacterDexterity>
     </div>
     <div class ="field flexbox margin">
-      <label for="Constitution"> Constitution: </label>
+      <label for="characterConstitution"> Constitution: </label>
       <!---create a drop down to select from-->
       <input name="characterConstitution" #newCharacterConstitution>
     </div>
     <div class ="field flexbox margin">
-      <label for="Intelligence"> Intelligence:</label>
+      <label for="characterIntelligence"> Intelligence:</label>
       <input name="characterIntelligence" #newCharacterIntelligence>
     </div>
     <div class ="field flexbox margin">
-      <label for="Wisdom"> Wisdom: </label>
+      <label for="characterWisdom"> Wisdom: </label>
       <input name="characterWisdom" #newCharacterWisdom>
     </div>
     <div class ="field flexbox margin">
-      <label  for="Charisma"> Charisma: </label>
+      <label  for="characterCharisma"> Charisma: </label>
       <!---create a drop down to select from-->
       <input name="characterCharisma" #newCharacterCharisma>
     </div>
@@ -63,12 +63,14 @@
 <div class="text-center">
   <div>
     <button (click)="cancel()" class="btn btn-secondary margin"> Cancel</button>
-    <button (click)="confirm(newFirstName, newUsername, newEmail, newPassword)" class="btn btn-primary margin"> Confirm</button>
+    <button (click)="confirm(newCharacterName, newCharacterClass, newBackground, newFaction,
+    newRace, newAlignment, newCharacterStrength, newCharacterDexterity, newCharacterConstitution,
+    newCharacterIntelligence, newCharacterWisdom, newCharacterCharisma )" class="btn btn-primary margin"> Confirm</button>
   </div>
   <div class="alertWidth">
     <div *ngIf="passError" class="alert alert-danger" role="alert">
       <span class="pficon pficon-error-circle-o"></span>
-      <strong>Invalid!</strong> Please provide a vaid email and password!
+      <strong>Invalid!</strong> Please provide acceptable character information
     </div>
   </div>
 </div>

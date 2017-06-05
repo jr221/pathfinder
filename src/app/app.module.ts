@@ -17,6 +17,8 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { JoinAdventureComponent } from './join-adventure/join-adventure.component';
 import { CreateCharacterComponent } from './create-character/create-character.component';
 import { OptionsPageComponent } from './options-page/options-page.component';
+import { PlayerPageComponent } from './player-page/player-page.component';
+import { ResumePageComponent } from './resume-page/resume-page.component';
 
 const routes: Routes = [
   { path: 'new-user', component: NewUserComponent },
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'joinAdventure', component: JoinAdventureComponent },
   { path: 'adventureOptions', component: OptionsPageComponent },
   { path: 'newCharacter', component: CreateCharacterComponent },
+  { path: 'playerChar', component: PlayerPageComponent },
+  { path: 'resumeAdventure', component: ResumePageComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' }
 ]
 
@@ -45,7 +49,9 @@ export const firebaseConfig = {
     UserPageComponent,
     JoinAdventureComponent,
     CreateCharacterComponent,
-    OptionsPageComponent
+    OptionsPageComponent,
+    PlayerPageComponent,
+    ResumePageComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

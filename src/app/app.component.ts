@@ -39,11 +39,8 @@ export class AppComponent {
     });
   }
   getDisplay(){
-    console.log('getting display');
     return this.fireService.getFromDatabase('user', this.uid, 'uid').subscribe(val =>{
-      console.log('the uid value is : ', val);
       this.display = val[0].username;
-      console.log(this.display);
       }
     );
   }
