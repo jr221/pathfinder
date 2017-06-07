@@ -31,7 +31,8 @@ export class CreateCharacterComponent implements OnInit {
 
       var playerCharacter = {
         uid: this.fireService.uid,
-        character: this.newCharacter
+        character: this.newCharacter,
+        playerId: Math.floor(Math.random() * 10000000) + 1
       }
       this.fireService.pushToDatabase("character", playerCharacter);
       this.fireService.setCurChar(this.newCharacter);

@@ -9,7 +9,7 @@
           <div class="card-pf-body">
             {{ char.character.characterName  }} the {{ char.character.characterClass  }}
             <p class="card-pf-aggregate-status-notifications">
-              <span class="card-pf-aggregate-status-notification"><span class="pficon pficon-add-circle-o"></span></span>
+              <span class="card-pf-aggregate-status-notification"><span (click)="resume(char.character)" class="pficon pficon-add-circle-o"></span></span>
             </p>
           </div>
         </div>
