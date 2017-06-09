@@ -74,3 +74,10 @@
     </div>
   </div>
 </div>
+
+<div class="alertWidth">
+  <div *ngIf="er" class="alert alert-danger alert-dismissable" role="alert">
+    <span class="pficon pficon-error-circle-o"></span>
+    <strong>Invalid!</strong> {{ errorMessage }}
+  </div>
+</div>

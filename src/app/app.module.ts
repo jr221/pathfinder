@@ -19,6 +19,7 @@ import { CreateCharacterComponent } from './create-character/create-character.co
 import { OptionsPageComponent } from './options-page/options-page.component';
 import { PlayerPageComponent } from './player-page/player-page.component';
 import { ResumePageComponent } from './resume-page/resume-page.component';
+import { JoinGameComponent } from './join-game/join-game.component';
 
 const routes: Routes = [
   { path: 'new-user', component: NewUserComponent },
@@ -51,7 +52,8 @@ export const firebaseConfig = {
     CreateCharacterComponent,
     OptionsPageComponent,
     PlayerPageComponent,
-    ResumePageComponent
+    ResumePageComponent,
+    JoinGameComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

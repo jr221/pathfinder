@@ -1,0 +1,25 @@
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 2em;
+  width: 20em;
+}
+.flex-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 2em;
+  width: 20em;
+}
+
+.border{
+  padding-top: 2em;
+  padding-left: 2em;
+}
+.flex-item{
+  background-color: cornflowerblue;
+  width: 2em;
+  height: 2em;
+  margin: 10px;
+}
