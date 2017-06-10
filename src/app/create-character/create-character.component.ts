@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AF } from '../providers/af';
 import { Character } from './character.model';
+import { ClassLevel } from  './classLevel.model';
+import { Spells } from './spells.model';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class CreateCharacterComponent implements OnInit {
   public er = false;
   newCharacter: Character;
 
-  constructor(public fireService: AF, private router: Router) { }
+  constructor(public fireService: AF, private router: Router) {
+  }
 
   ngOnInit() {
 
@@ -67,5 +70,6 @@ export class CreateCharacterComponent implements OnInit {
   cancel(){
     this.router.navigate(['adventureOptions']);
   }
+
 
 }

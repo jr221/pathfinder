@@ -6,9 +6,22 @@
         <input name="characterName" #newCharacterName>
       </div>
       <div class ="field flexbox margin">
-        <label for="characterClass"> Class: </label>
+        <label for="characterClass"> Class:&ensp;</label>
         <!---create a drop down to select from-->
-        <input name="characterClass" #newCharacterClass>
+        <select class="combobox form-control padComboBox">
+          <option value="" selected="selected">Select a Class</option>
+          <option value="Barbarian">Barbarian</option>
+          <option value="Bard">Bard</option>
+          <option value="Cleric">Cleric</option>
+          <option value="Druid">Druid</option>
+          <option value="Fighter">Fighter</option>
+          <option value="Monk">Monk</option>
+          <option value="Paladin">Paladin</option>
+          <option value="Ranger">Ranger</option>
+          <option value="Rogue">Rogue</option>
+          <option value="Sorcerer">Sorcerer</option>
+          <option value="Wizard">Wizard</option>
+        </select>
       </div>
       <div class ="field flexbox margin">
         <label for="background"> Background: </label>
@@ -80,4 +93,8 @@
     <span class="pficon pficon-error-circle-o"></span>
     <strong>Invalid!</strong> {{ errorMessage }}
   </div>
+</div>
+
+<div>
+  <button (click)="SPELLS()" class="btn btn-secondary margin"> SPELLS</button>
 </div>

@@ -1,3 +1,5 @@
+import { Spells } from  './spells.model';
+
 export class Character {
   characterName: string;
   characterClass: string;
@@ -11,6 +13,7 @@ export class Character {
   characterIntelligence: number;
   characterWisdom: number;
   characterCharisma: number;
+  characterSpells: Spells[];
 
   // these ones can be figured out by the answer to the previous set
   private characterArmorClass: number;
@@ -78,4 +81,7 @@ export class Character {
     this.characterExperience -= 1;
   }
 
+  addSpell(spell: Spells){
+    this.characterSpells.push(spell);
+  }
 }
