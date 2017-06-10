@@ -6,9 +6,9 @@
         <input name="characterName" #newCharacterName>
       </div>
       <div class ="field flexbox margin">
-        <label for="characterClass"> Class:&ensp;</label>
+        <label for="characterClass" class="labelWidth"> Class:&ensp;</label>
         <!---create a drop down to select from-->
-        <select class="combobox form-control padComboBox">
+        <select class="combobox form-control padComboBox" [(ngModel)]="selectedClass" name="selectClass">
           <option value="" selected="selected">Select a Class</option>
           <option value="Barbarian">Barbarian</option>
           <option value="Bard">Bard</option>
@@ -24,22 +24,64 @@
         </select>
       </div>
       <div class ="field flexbox margin">
-        <label for="background"> Background: </label>
+        <label for="background" class="labelWidth"> Background:&ensp;</label>
         <!---create a drop down to select from-->
-        <input name="background" #newBackground>
+        <select class="combobox form-control padComboBox" [(ngModel)]="selectedBackground" name="selectBackground">
+          <option value="" selected="selected">Select a Background:</option>
+          <option value="Acolyte">Acolyte</option>
+          <option value="Charlatan">Charlatan</option>
+          <option value="Criminal">Criminal</option>
+          <option value="Entertainer">Entertainer</option>
+          <option value="Folk Hero">Folk Hero</option>
+          <option value="Guild Artisan">Guild Artisan</option>
+          <option value="Hermit">Hermit</option>
+          <option value="Noble">Noble</option>
+          <option value="Outlander">Outlander</option>
+          <option value="Sage">Sage</option>
+          <option value="Sailor">Sailor</option>
+          <option value="Soldier">Soldier</option>
+          <option value="Urchin">Urchin</option>
+        </select>
       </div>
       <div class ="field flexbox margin">
-        <label for="faction"> Faction:</label>
-        <input name="faction" #newFaction>
+        <label for="faction" class="labelWidth"> Faction: &ensp;</label>
+        <select class="combobox form-control padComboBox" [(ngModel)]="selectedFaction" name="selectFaction">
+          <option value="" selected="selected">Select a Faction:</option>
+          <option value="Harpers">The Harpers</option>
+          <option value="Gauntlet">The Order of the Gauntlet</option>
+          <option value="Emeralds">The Emerald Enclaves</option>
+          <option value="LordsAlliance">The Lords Alliance</option>
+          <option value="Zhentarim">The Zhentarim</option>
+        </select>
       </div>
       <div class ="field flexbox margin">
-        <label for="race"> Race: </label>
-        <input name="race" #newRace>
+        <label for="race" class="labelWidth"> Race: &ensp;</label>
+          <select class="combobox form-control padComboBox" [(ngModel)]="selectedRace" name="selectRace">
+            <option value="" selected="selected">Select a Race:</option>
+            <option value="Dwarves">Dwarves</option>
+            <option value="Elves">Elves</option>
+            <option value="Gnomes">Gnomes</option>
+            <option value="Half-Elves">Half-Elves</option>
+            <option value="Half-Orcs">Half-Orcs</option>
+            <option value="Halflings">Halflings</option>
+            <option value="Humans">Humans</option>
+          </select>
       </div>
       <div class ="field flexbox margin">
-        <label  for="alignment"> Alignment: </label>
+        <label  for="alignment" class="labelWidth"> Alignment: &ensp;</label>
         <!---create a drop down to select from-->
-        <input name="alignment" #newAlignment>
+        <select class="combobox form-control padComboBox" [(ngModel)]="selectedAlignment" name="selectAlignment">
+          <option value="" selected="selected">Select Alignment:</option>
+          <option value="Lawful Good">Lawful Good</option>
+          <option value="Lawful Neutral">Lawful Neutral</option>
+          <option value="Lawful Evil">Lawful Evil</option>
+          <option value="Neutral Good">Neutral Good</option>
+          <option value="Neutral">Neutral</option>
+          <option value="Neutral Evil">Neutral Evil</option>
+          <option value="Chaotic Good">Chaotic Good</option>
+          <option value="Chaotic Neutral">Chaotic Neutral</option>
+          <option value="Chaotic Evil">Chaotic Evil</option>
+      </select>
       </div>
   </div>
   <div id="right" class="paddingleft2" style="float:right; width:50%;">
@@ -76,8 +118,8 @@
 <div class="text-center">
   <div>
     <button (click)="cancel()" class="btn btn-secondary margin"> Cancel</button>
-    <button (click)="confirm(newCharacterName, newCharacterClass, newBackground, newFaction,
-    newRace, newAlignment, newCharacterStrength, newCharacterDexterity, newCharacterConstitution,
+    <button (click)="confirm(newCharacterName, selectedClass, selectedBackground, selectedFaction,
+    selectedRace, selectedAlignment, newCharacterStrength, newCharacterDexterity, newCharacterConstitution,
     newCharacterIntelligence, newCharacterWisdom, newCharacterCharisma )" class="btn btn-primary margin"> Confirm</button>
   </div>
   <div class="alertWidth">

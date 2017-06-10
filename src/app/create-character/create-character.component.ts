@@ -23,13 +23,13 @@ export class CreateCharacterComponent implements OnInit {
 
   }
 
-  confirm(cName: HTMLInputElement, cClass: HTMLInputElement, cBackground: HTMLInputElement,
-    cFaction: HTMLInputElement, cRace: HTMLInputElement, cAllignment: HTMLInputElement, cStrength: HTMLInputElement,
+  confirm(cName: HTMLInputElement, cClass: string, cBackground: string,
+    cFaction: string, cRace: string, cAllignment: string, cStrength: HTMLInputElement,
     cDexterity: HTMLInputElement, cConstitution: HTMLInputElement, cIntelligence: HTMLInputElement, cWisdom: HTMLInputElement,
     cCharisma: HTMLInputElement){
-
-      if(cName.value == "" || cClass.value == "" || cBackground.value == "" || cFaction.value == "" || cRace.value == ""
-        || cAllignment.value == "" || cStrength.value == "" || cDexterity.value == "" || cConstitution.value == "" ||
+      console.log('Character Class Value: ', cClass);
+      if(cName.value == "" || cClass == null || cBackground == null || cFaction == null || cRace == null
+        || cAllignment == null || cStrength.value == "" || cDexterity.value == "" || cConstitution.value == "" ||
          cIntelligence.value == "" || cWisdom.value == "" || cCharisma.value == ""){
           this.errorMessage = "Please enter a value for every field";
           this.er  = true;
@@ -46,8 +46,8 @@ export class CreateCharacterComponent implements OnInit {
          }.bind(this), 3000);
       }
       else{
-        this.newCharacter = new Character(cName.value, cClass.value, cBackground.value, cFaction.value,
-          cRace.value, cAllignment.value, +cStrength.value,
+        this.newCharacter = new Character(cName.value, cClass, cBackground, cFaction,
+          cRace, cAllignment, +cStrength.value,
           +cDexterity.value, +cConstitution.value, +cIntelligence.value, +cWisdom.value, +cCharisma.value)
 
           var playerCharacter = {

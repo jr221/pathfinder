@@ -8,6 +8,9 @@
   justify-content: flex-end;
   width: 22em;
 }
+.labelWidth{
+  width: 10em;
+}
 .alertWidth{
   width: 80em;
   padding-left: 40em;
