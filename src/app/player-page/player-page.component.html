@@ -32,24 +32,24 @@
             Skills
           </h2>
               <p>
-                <b>Acrobatics: </b>{{ playerCharacter.characterDexterity - 14}} <br />
-                <b>Animal Handling: </b> {{ playerCharacter.characterWisdom - 14}} <br />
-                <b>Arcana: </b> {{ playerCharacter.characterIntelligence - 14}} <br />
-                <b>Athletics:</b> {{ playerCharacter.characterStrength - 14}} <br />
-                <b>Deception: </b> {{ playerCharacter.characterCharisma - 14}} <br />
-                <b>History: </b> {{ playerCharacter.characterIntelligence - 14}} <br />
-                <b>Insight: </b>{{ playerCharacter.characterWisdom - 14}} <br />
-                <b>Intimidation: </b>{{ playerCharacter.characterCharisma - 14}} <br />
-                <b>Investigation: </b> {{ playerCharacter.characterIntelligence - 14}} <br />
-                <b>Medicine:</b>{{ playerCharacter.characterWisdom - 14}}<br />
-                <b>Nature: </b>{{ playerCharacter.characterIntelligence - 14}} <br />
-                <b>Perception: </b>{{ playerCharacter.characterWisdom - 14}} <br />
-                <b>Performance: </b>{{ playerCharacter.characterCharisma - 14 }} <br />
-                <b>Persuasion: </b>{{ playerCharacter.characterCharisma - 14}} <br />
-                <b>Religion: </b> {{ playerCharacter.characterIntelligence - 14}} <br />
-                <b>Slight of Hand:</b>{{ playerCharacter.characterDexterity - 14}}<br />
-                <b>Stealth: </b>{{ playerCharacter.characterDexterity - 14 }} <br />
-                <b>Survival: </b>{{ playerCharacter.characterWisdom - 14}} <br />
+                <b>Acrobatics: </b>{{ dexterityModifier }} <br />
+                <b>Animal Handling: </b> {{ wisdomModifier }} <br />
+                <b>Arcana: </b> {{ intelligenceModifier }} <br />
+                <b>Athletics: </b> {{ strengthModifier }} <br />
+                <b>Deception: </b> {{ charismarModfier }} <br />
+                <b>History: </b> {{ intelligenceModifier }} <br />
+                <b>Insight: </b>{{ wisdomModifier }} <br />
+                <b>Intimidation: </b>{{ charismarModfier }} <br />
+                <b>Investigation: </b> {{ intelligenceModifier }} <br />
+                <b>Medicine: </b>{{ wisdomModifier }}<br />
+                <b>Nature: </b>{{ intelligenceModifier }} <br />
+                <b>Perception: </b>{{ wisdomModifier }} <br />
+                <b>Performance: </b>{{ charismarModfier }} <br />
+                <b>Persuasion: </b>{{ charismarModfier }} <br />
+                <b>Religion: </b> {{ intelligenceModifier }} <br />
+                <b>Slight of Hand: </b>{{ dexterityModifier }}<br />
+                <b>Stealth: </b>{{ dexterityModifier }} <br />
+                <b>Survival: </b>{{ wisdomModifier }} <br />
             </p>
         </div>
       </div>
@@ -74,7 +74,7 @@
             Stats
           </h2>
           <b>Armor Class: </b>{{ playerCharacter.characterArmorClass }} <br />
-          <b>Initiative; </b> {{ playerCharacter.characterInitiative }} <br />
+          <b>Initiative: </b> {{ playerCharacter.characterInitiative }} <br />
           <b>Speed: </b> {{ playerCharacter.characterSpeed }} <br />
         </div>
       </div>
