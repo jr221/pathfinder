@@ -1,3 +1,127 @@
-<p>
-  player-page works!
-</p>
+<div class="row row-cards-pf border">
+  <div class="col-xs-12 col-sm-3 col-md-2">
+    <div class="card-pf card-pf-view card-pf-view-xs">
+      <div class="card-pf-body">
+        <div class="card-pf-heading-kebab">
+          <h2 class="card-pf-title">
+            <span class="pficon pficon-topology"></span> {{ playerCharacter.characterName }} Level: {{ playerCharacter.characterLevel }}
+          </h2>
+              <p>
+                <b>Character Name: </b>{{ playerCharacter.characterName }} <br />
+                <b>Class: </b> {{ playerCharacter.characterClass }} <br />
+                <b>Background: </b> {{ playerCharacter.characterBackground }} <br />
+                <b>Faction:</b> {{ playerCharacter.characterFaction }} <br />
+                <b>Race: </b> {{ playerCharacter.characterRace }} <br />
+                <b>Alignment: </b> {{ playerCharacter.characterAllignment }} <br />
+                <b>Strength: </b>{{ playerCharacter.characterStrength }} <br />
+                <b>Dexterity: </b>{{ playerCharacter.characterDexterity }} <br />
+                <b>Constitution: </b> {{ playerCharacter.characterConstitution }} <br />
+                <b>Intelligence:</b>{{ playerCharacter.characterIntelligence }}<br />
+                <b>Wisdom: </b>{{ playerCharacter.characterWisdom }} <br />
+                <b>Charisma: </b>{{ playerCharacter.characterCharisma }} <br />
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-2">
+    <div class="card-pf card-pf-view card-pf-view-xs">
+      <div class="card-pf-body">
+        <div class="card-pf-heading-kebab">
+          <h2 class="card-pf-title">
+            Skills
+          </h2>
+              <p>
+                <b>Acrobatics: </b>{{ dexterityModifier }} <br />
+                <b>Animal Handling: </b> {{ wisdomModifier }} <br />
+                <b>Arcana: </b> {{ intelligenceModifier }} <br />
+                <b>Athletics: </b> {{ strengthModifier }} <br />
+                <b>Deception: </b> {{ charismarModfier }} <br />
+                <b>History: </b> {{ intelligenceModifier }} <br />
+                <b>Insight: </b>{{ wisdomModifier }} <br />
+                <b>Intimidation: </b>{{ charismarModfier }} <br />
+                <b>Investigation: </b> {{ intelligenceModifier }} <br />
+                <b>Medicine: </b>{{ wisdomModifier }}<br />
+                <b>Nature: </b>{{ intelligenceModifier }} <br />
+                <b>Perception: </b>{{ wisdomModifier }} <br />
+                <b>Performance: </b>{{ charismarModfier }} <br />
+                <b>Persuasion: </b>{{ charismarModfier }} <br />
+                <b>Religion: </b> {{ intelligenceModifier }} <br />
+                <b>Slight of Hand: </b>{{ dexterityModifier }}<br />
+                <b>Stealth: </b>{{ dexterityModifier }} <br />
+                <b>Survival: </b>{{ wisdomModifier }} <br />
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-2">
+    <div class="card-pf card-pf-view card-pf-view-xs">
+      <div class="card-pf-body">
+        <div class="card-pf-heading-kebab">
+          <h2 class="card-pf-title">
+              <span class="fa fa-shield"></span>Health
+          </h2>
+          <b>Current Hit Points: </b>{{ playerCharacter.characterCurrentHitPoint}} <br />
+          <b>Total Hit Points: </b> {{ playerCharacter.characterTotalHitPoints }} <br />
+        </div>
+      </div>
+    </div>
+    <div class="card-pf card-pf-view card-pf-view-xs">
+      <div class="card-pf-body">
+        <div class="card-pf-heading-kebab">
+          <h2 class="card-pf-title">
+            Stats
+          </h2>
+          <b>Armor Class: </b>{{ playerCharacter.characterArmorClass }} <br />
+          <b>Initiative: </b> {{ playerCharacter.characterInitiative }} <br />
+          <b>Speed: </b> {{ playerCharacter.characterSpeed }} <br />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3 col-md-3">
+    <div class="card-pf card-pf-view card-pf-view-xs">
+      <div class="card-pf-body">
+        <div class="card-pf-heading-kebab">
+          <h2 class="card-pf-title">
+            Spells
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-3 col-md-2">
+    <div class="card-pf card-pf-view card-pf-view-xs">
+      <div class="card-pf-body">
+        <div class="card-pf-heading-kebab">
+          <h2 class="card-pf-title">
+            Experience Points: {{ playerCharacter.characterExperience}}
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="card-pf card-pf-view card-pf-view-xs">
+      <div class="card-pf-body">
+        <div class="card-pf-heading-kebab">
+          <h2 class="card-pf-title">
+            Money
+          </h2>
+          Copper: <br />
+          Silver: <br />
+          Gold: <br />
+          Plat: <br />
+        </div>
+      </div>
+    </div>
+    <div class="card-pf card-pf-view card-pf-view-xs">
+      <div class="card-pf-body">
+        <div class="card-pf-heading-kebab">
+          <h2 class="card-pf-title">
+            Items: No Items
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

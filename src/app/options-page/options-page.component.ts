@@ -22,4 +22,8 @@ export class OptionsPageComponent implements OnInit {
       this.router.navigate(['resumeAdventure']);
   }
 
+  cancel(){
+      this.router.navigate(['user']);
+  }
+
 }

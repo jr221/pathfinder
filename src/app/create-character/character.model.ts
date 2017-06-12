@@ -1,3 +1,5 @@
+import { Spells } from  './spells.model';
+
 export class Character {
   characterName: string;
   characterClass: string;
@@ -11,14 +13,19 @@ export class Character {
   characterIntelligence: number;
   characterWisdom: number;
   characterCharisma: number;
+  characterSpells: Spells[];
 
   // these ones can be figured out by the answer to the previous set
-  characterArmorClass: number;
-  characterInspiration: number;
-  characterInitiative: number;
-  characterSpeed: number;
-  charracterCurrentHitPoint: number;
-  characterTotalHitPoints: number;
+  private characterArmorClass: number;
+  private characterInspiration: number;
+  private characterInitiative: number;
+  private characterSpeed: number;
+  private characterCurrentHitPoint: number;
+  private characterTotalHitPoints: number;
+
+
+  private characterLevel: number;
+  private characterExperience: number;
 
   constructor(characterName: string, characterClass: string, characterBackground: string,
   characterFaction: string, characterRace: string, characterAllignment: string, characterStrength: number,
@@ -36,6 +43,14 @@ export class Character {
     this.characterIntelligence = characterIntelligence;
     this.characterWisdom = characterWisdom;
     this.characterCharisma = characterCharisma;
+
+    this.characterLevel = 1;
+    this.characterExperience = 0;
+    this.characterSpeed = 30;
+    this.characterArmorClass = 16;
+    this.characterInitiative = 1;
+    this.characterCurrentHitPoint = characterConstitution + 8;
+    this.characterTotalHitPoints = characterConstitution + 8;
   }
 
   raiseInspiration(){
@@ -45,9 +60,28 @@ export class Character {
     this.characterInspiration -= 1;
   }
   raiseHitPoints(){
-    this.charracterCurrentHitPoint += 1;
+    this.characterCurrentHitPoint += 1;
   }
   reduceHitPoints(){
-    this.charracterCurrentHitPoint -= 1;
+    this.characterCurrentHitPoint -= 1;
+  }
+  getCharacterName(){
+    return this.characterName;
+  }
+
+  raiseExperience(){
+    this.characterExperience += 1;
+
+    if(this.characterExperience == 100){
+      this.characterLevel += 1;
+      this.characterExperience = 0;
+    }
+  }
+  reduceExperience(){
+    this.characterExperience -= 1;
+  }
+
+  addSpell(spell: Spells){
+    this.characterSpells.push(spell);
   }
 }

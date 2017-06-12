@@ -13,7 +13,7 @@ export class AF {
   user: Observable<firebase.User>;
   users: FirebaseListObservable<any[]>;
   public uid;
-  public currentChar;
+  private currentChar: Character;
   // fix the logon for each page public loginStatus;
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, private router: Router) {
@@ -47,6 +47,10 @@ export class AF {
 
     setCurChar(curChar: Character){
       this.currentChar = curChar;
+    }
+
+    getCurrentChar(){
+      return this.currentChar;
     }
 
     login(email: string, password: string) {

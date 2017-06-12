@@ -8,13 +8,21 @@
   justify-content: flex-end;
   width: 22em;
 }
+.labelWidth{
+  width: 10em;
+}
 .alertWidth{
-  width: 40em;
-  padding-left: 2em;
+  width: 80em;
+  padding-left: 40em;
 }
 .paddingleft1{
   padding-left: 25em;
 }
+
+.padComboBox{
+  padding-left: 2em;
+}
+
 .paddingleft2{
   padding-left: 10em;
 }
