@@ -1,16 +1,14 @@
 <form class="paddingleft">
-  <h1 class="text-center">Create User Page</h1>
+  <h1 class="text-center">Create Adventure Page</h1>
   <div class ="field flexbox margin">
-    <label for="First Name"> First Name: </label>
-    <input name="firstName" #newFirstName>
+    <label for="Quest Name"> Quest Name: </label>
+    <input name="questName" #newQuestName>
   </div>
   <div class ="field flexbox margin">
-    <label for="username"> Username: </label>
-    <input name="username" #newUsername>
+    <label for="blurb"> Please provide a little summary of the adventure: </label>
   </div>
   <div class ="field flexbox margin">
-    <label for="email"> Email: </label>
-    <input name="email" #newEmail>
+    <textarea name="blurb" cols="40" rows="3" placeholder="Input blurb here?" #newBlurb></textarea>
   </div>
   <div class ="field flexbox margin">
     <label for="password"> Password:</label>
@@ -18,12 +16,12 @@
   </div>
   <div class="flexbutton">
     <button (click)="cancel()" class="btn btn-secondary margin"> Cancel</button>
-    <button (click)="confirm(newFirstName, newUsername, newEmail, newPassword)" class="btn btn-primary margin"> Confirm</button>
+    <button (click)="confirm(newQuestName, newBlurb, newPassword)" class="btn btn-primary margin"> Confirm</button>
   </div>
   <div class="alertWidth">
     <div *ngIf="passError" class="alert alert-danger" role="alert">
       <span class="pficon pficon-error-circle-o"></span>
-      <strong>Invalid!</strong> Please provide a valid email and password!
+      <strong>Invalid!</strong> Please provide a valid input!
     </div>
   </div>
 </form>

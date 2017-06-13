@@ -20,6 +20,9 @@ import { OptionsPageComponent } from './options-page/options-page.component';
 import { PlayerPageComponent } from './player-page/player-page.component';
 import { ResumePageComponent } from './resume-page/resume-page.component';
 import { JoinGameComponent } from './join-game/join-game.component';
+import { MasterSetupComponent } from './master-setup/master-setup.component';
+import { MasterOptionsComponent } from './master-options/master-options.component';
+import { MasterResumeComponent } from './master-resume/master-resume.component';
 
 const routes: Routes = [
   { path: 'new-user', component: NewUserComponent },
@@ -30,6 +33,8 @@ const routes: Routes = [
   { path: 'newCharacter', component: CreateCharacterComponent },
   { path: 'playerChar', component: PlayerPageComponent },
   { path: 'resumeAdventure', component: ResumePageComponent },
+  { path: 'dungeonMasterSetup', component: MasterSetupComponent },
+  { path: 'dungeonMasterOptions', component: MasterOptionsComponent },
   { path: '',   redirectTo: '/login', pathMatch: 'full' }
 ]
 
@@ -53,7 +58,10 @@ export const firebaseConfig = {
     OptionsPageComponent,
     PlayerPageComponent,
     ResumePageComponent,
-    JoinGameComponent
+    JoinGameComponent,
+    MasterSetupComponent,
+    MasterOptionsComponent,
+    MasterResumeComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

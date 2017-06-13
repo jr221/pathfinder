@@ -23,6 +23,9 @@ export class UserPageComponent implements OnInit {
   joinAdventure(){
     this.router.navigate(['adventureOptions']);
   }
+  dungeonSetup(){
+    this.router.navigate(['dungeonMasterOptions']);
+  }
   createAdventure(){
 
   }

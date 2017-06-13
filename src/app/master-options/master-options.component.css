@@ -1,0 +1,6 @@
+.flexbutton{
+  display: flex;
+  margin: 3em;
+  justify-content: flex-start;
+  width: 10em;
+}
